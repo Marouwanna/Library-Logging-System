@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.logs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logs-container h2 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+thead {
+    background: #111827;
+    color: white;
+}
+
+thead th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tbody tr:hover {
+    background: #dbeafe;
+    transition: 0.2s ease;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.no-logs {
+    text-align: center;
+    color: #6b7280;
+    padding: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background: #ef4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #dc2626;
+}

@@ -1,10 +1,14 @@
+<?php
+include '../connnect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Logging System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../CSS/visitor.css">
 </head>
 <body>
 
@@ -14,26 +18,29 @@
             <p>Please scan or enter your Library Card ID to log your visit.</p>
         </div>
         
-        <form id="logging-form" autocomplete="off">
+        <form action="../Assets/visitor-verification.php" method="POST" id="logging-form" autocomplete="off">
             <div class="input-group">
                 <label for="library-card-input">Library Card ID</label>
                 <input 
                     type="text" 
+                    name="cardID"
                     id="library-card-input" 
-                    placeholder="e.g., LIB-123456" 
+                    placeholder="e.g., 123456" 
                     required 
                     autofocus
                 >
-                <span class="error-message" id="error-msg">Invalid Card ID. Please try again.</span>
+                <span class="error-message" id="error-msg">Please use format: 123456</span>
             </div>
             
-            <button type="submit" class="submit-btn">Log Entry</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
         
         <div class="status-box hidden" id="status-box">
-            <p>Welcome back, <span id="user-name">User</span>!</p>
+            <p id="status-message">Welcome back!</p>
+            <p>Card: <span id="user-name">User</span></p>
         </div>
     </div>
 
+    <script src="../JS/visitor.js"></script>    
 </body>
 </html>
