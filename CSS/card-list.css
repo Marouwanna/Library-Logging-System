@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background: #222;
+    color: white;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+.delete-btn {
+    border: none;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background: #dc3545;
+}
+
+.delete-btn:hover {
+    background: #b12020;
+}
+
+.add-btn{
+    border: none;
+    display: inline-block;
+    margin-left: 1px;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #2563eb;
+}
+
+.addd-btn {
+    border: none;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background: #3b82f6;
+}
+
+.addd-btn:hover {
+    background: #2563eb;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background: #ef4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #dc2626;
+}
+
+.modal {
+    display: none;          
+    position: fixed;         
+    top: 50%;              
+    left: 50%;               
+    transform: translate(-50%, -50%);  
+    background-color: rgba(255,255,255,1); 
+    border: 2px solid #4e46e577;
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 9999;
+    min-width: 300px;       
+    max-width: 90%;          
+}
+
+.modal-content {
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    animation: fadeIn 0.2s ease;
+}
+
+.close-btn {
+    border: none;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    background: #ef4444;
+}
+
+.close-btn:hover {
+    background: #c10000;
+}
+
+.cancel-btn {
+    border: none;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    background: #6b7280;
+}
+
+.cancel-btn:hover {
+    background: #4a4e55;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.popup-box {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 14px;
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    animation: popupFade 0.25s ease;
+}
+
+.popup-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.popup-box p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #444;
+}
+
+.popup-box.success h3 {
+    color: #3b82f6;
+}
+
+.popup-box.error h3 {
+    color: #c62828;
+}
+
+.popup-ok {
+    background: #3b82f6;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.popup-ok:hover {
+    background: #426aa9;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.popup-close:hover {
+    color: #c10000;
+}
+
+@keyframes popupFade {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
