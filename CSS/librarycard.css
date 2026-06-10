@@ -48,3 +48,18 @@ a {
 a:hover {
     opacity: 0.8;
 }
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 16px;
+    background: #ef4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #dc2626;
+}

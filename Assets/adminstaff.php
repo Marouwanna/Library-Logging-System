@@ -16,6 +16,7 @@ $sql = "SELECT * FROM staff";
 <body>
 
 <div class="container">
+    <a href="../ADMIN/admin-dashboard.php" class="back-btn">x</a>
     <h1>Admin List</h1>
 
     <table border="1">

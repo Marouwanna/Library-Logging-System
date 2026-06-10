@@ -16,6 +16,7 @@ $sql = "SELECT * FROM library_visitors";
 <body>
 
 <div class="container">
+    <a href="../ADMIN/admin-dashboard.php" class="back-btn">x</a>
     <h1>Library Cards</h1>
 
     <table border="1">
