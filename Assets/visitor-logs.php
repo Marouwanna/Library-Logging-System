@@ -29,23 +29,39 @@ $sql = "SELECT * FROM visitor_log ORDER BY time_in ASC";
                     <th>Time-out</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row['library_card']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['time_in']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['time_out']) . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='4'>No logs found.</td></tr>";
-                }
-                ?>
+            
+               <tbody id="visitorLogsBody">
+
             </tbody>
         </table>
     </div>
+    <script>
+        function loadVisitorLogs() {
+
+            fetch('../Assets/visitor-logs-data.php')
+            .then(response => response.json())
+            .then(data => {
+
+                let html = '';
+
+                data.forEach(log => {
+
+                    html += `
+                    <tr>
+                        <td>${log.library_card}</td>
+                        <td>${log.time_in ?? ''}</td>
+                        <td>${log.time_out ?? ''}</td>
+                    </tr>
+                    `;
+                });
+
+                document.getElementById('visitorLogsBody').innerHTML = html;
+            });
+        }
+
+        loadVisitorLogs();
+
+        setInterval(loadVisitorLogs, 3000);
+</script>
 </body>
 </html>
