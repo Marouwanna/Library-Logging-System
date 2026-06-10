@@ -41,6 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadChart();
-    setInterval(loadChart, 3000); 
+    setInterval(loadChart, 7000); 
 
 });
