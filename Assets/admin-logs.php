@@ -29,23 +29,39 @@ $sql = "SELECT * FROM staff_log ORDER BY time_in ASC";
                     <th>Time-out</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['time_in']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['time_out']) . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='4'>No logs found.</td></tr>";
-                }
-                ?>
+            
+                <tbody id="adminLogsBody">
+
             </tbody>
         </table>
     </div>
+    <script>
+        function loadAdminLogs() {
+
+            fetch('../Assets/admin-logs-data.php')
+            .then(response => response.json())
+            .then(data => {
+
+                let html = '';
+
+                data.forEach(log => {
+
+                    html += `
+                    <tr>
+                        <td>${log.username}</td>
+                        <td>${log.time_in ?? ''}</td>
+                        <td>${log.time_out ?? ''}</td>
+                    </tr>
+                    `;
+                });
+
+                document.getElementById('adminLogsBody').innerHTML = html;
+            });
+        }
+
+        loadAdminLogs();
+
+        setInterval(loadAdminLogs, 3000);
+</script>
 </body>
 </html>
