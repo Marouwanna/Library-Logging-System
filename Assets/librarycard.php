@@ -12,7 +12,7 @@ $sql = "SELECT * FROM library_visitors";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Cards</title>
-    <link rel="stylesheet" href="../CSS/card-list.css">
+    <link rel="stylesheet" href="../CSS/cards-list.css">
 </head>
 <body>
 
@@ -20,37 +20,38 @@ $sql = "SELECT * FROM library_visitors";
         <a href="../ADMIN/admin-dashboard.php" class="back-btn">x</a>
         <h1>Library Cards</h1>
         <button class="add-btn" onclick="openModal()">+ Add User</button>
+        <div class="table-wrap">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Library Card</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Library Card</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+                <tbody>
+                    <?php
+                    $result = $conn->query($sql);
 
-            <tbody>
-                <?php
-                $result = $conn->query($sql);
+                    if ($result && $result->num_rows > 0) {
+                        $count = 1;
 
-                if ($result && $result->num_rows > 0) {
-                    $count = 1;
-
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $count++ . "</td>";
-                        echo "<td>" . htmlspecialchars($row['library_card']) . "</td>";
-                        echo "<td>
-                                <button class='delete-btn' onclick='confirmDelete(".$row['id'].")'>Delete</button>                            </td>";
-                        echo "</tr>";
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $count++ . "</td>";
+                            echo "<td>" . htmlspecialchars($row['library_card']) . "</td>";
+                            echo "<td>
+                                    <button class='delete-btn' onclick='confirmDelete(".$row['id'].")'>Delete</button>                            </td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='2'>No cards found.</td></tr>";
                     }
-                } else {
-                    echo "<tr><td colspan='2'>No cards found.</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+        </div>    
     </div>
 
     <!-- Alerts -->

@@ -8,7 +8,7 @@ include '../connnect.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Logging System</title>
-    <link rel="stylesheet" href="../CSS/visitor.css">
+    <link rel="stylesheet" href="../CSS/visitors.css">
 </head>
 <body>
 
@@ -21,7 +21,8 @@ include '../connnect.php';
         <form action="../Assets/visitor-verification.php" method="POST" id="logging-form" autocomplete="off">
             <div class="input-group">
                 <label for="library-card-input">Library Card ID</label>
-                <input 
+                <input
+                    class="field"
                     type="text" 
                     name="cardID"
                     id="library-card-input" 
