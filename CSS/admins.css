@@ -39,15 +39,15 @@ p {
     color: #4a5568;
 }
 
-.input-group input {
-    width: 100%;
+.field {
+    width: 93%;
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
 }
 
-.input-group input:focus {
+.field:focus {
     outline: none;
     border-color: #4f46e5;
 }
