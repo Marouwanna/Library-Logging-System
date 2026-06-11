@@ -30,26 +30,9 @@ $sql = "SELECT * FROM library_visitors";
                     </tr>
                 </thead>
 
-                <tbody>
-                    <?php
-                    $result = $conn->query($sql);
-
-                    if ($result && $result->num_rows > 0) {
-                        $count = 1;
-
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $count++ . "</td>";
-                            echo "<td>" . htmlspecialchars($row['library_card']) . "</td>";
-                            echo "<td>
-                                    <button class='delete-btn' onclick='confirmDelete(".$row['id'].")'>Delete</button>                            </td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='2'>No cards found.</td></tr>";
-                    }
-                    ?>
+                <tbody id="cardTableBody">
                 </tbody>
+
             </table>
         </div>    
     </div>
@@ -140,5 +123,24 @@ $sql = "SELECT * FROM library_visitors";
             }
         }
     </script>
+    <script>
+
+        function loadCards() {
+
+            fetch("card-data.php")
+            .then(response => response.text())
+            .then(data => {
+
+                document.getElementById("cardTableBody").innerHTML = data;
+
+            })
+            .catch(error => console.error(error));
+
+        }
+
+        // refresh every 2 seconds
+        setInterval(loadCards, 2000);
+
+        </script>
 </body>
 </html>
