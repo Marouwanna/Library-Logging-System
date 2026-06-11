@@ -12,7 +12,7 @@ $sql = "SELECT * FROM staff";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin List</title>
-    <link rel="stylesheet" href="../CSS/staffs.css">
+    <link rel="stylesheet" href="../CSS/staff-list.css">
 </head>
 <body>
 
