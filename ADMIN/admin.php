@@ -9,15 +9,15 @@ include '../connnect.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="../CSS/admins.css">
+    <title>Library Admin Login</title>
+    <link rel="stylesheet" href="../CSS/admin.css">
 
 </head>
 <body>
 
 <div class="login-container">
 
-    <h2>Admin Login</h2>
+    <h2>Library Admin Login</h2>
 
     <form action="../Assets/admin-verification.php" method="POST" id="admin-form">
 
@@ -27,8 +27,9 @@ include '../connnect.php';
         </div>
 
         <div class="input-group">
-            <label>Password</label>
-            <input class="field" type="password" name="password" id="password" required>
+            <label for="password">Password</label>
+            <input class="field" type="password" name="password" id="password" required><br>
+            <input class="check-box" type="checkbox" id="showPass" onclick="togglePasswordCheckbox()"> Show Password
         </div>
 
         <button type="submit" class="submit-btn">
@@ -40,6 +41,7 @@ include '../connnect.php';
     </form>
 
 </div>
+
 
 <script src="../JS/admin.js"></script>
 

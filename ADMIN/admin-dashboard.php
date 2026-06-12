@@ -2,11 +2,6 @@
 session_start();
 include '../connnect.php';
 
-if (!isset($_SESSION['admin_id']) || !isset($_SESSION['admin_username'])) {
-    header('Location: ../index.php');
-    exit;
-}
-
 $admin_username = $_SESSION['admin_username'];
 ?>
 <!DOCTYPE html>
@@ -15,7 +10,7 @@ $admin_username = $_SESSION['admin_username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Dashboard</title>
-    <link rel="stylesheet" href="../CSS/adminboard.css">
+    <link rel="stylesheet" href="../CSS/admintboard.css">
 </head>
 <body>
 
@@ -38,6 +33,10 @@ $admin_username = $_SESSION['admin_username'];
 
     <div class="chart-container">
         <canvas id="loginChart"></canvas>
+    </div>
+
+    <div class="developer-pg">
+        <a href="../developer-page.php" class="tab">Developer Page</a>
     </div>
 
 </div>

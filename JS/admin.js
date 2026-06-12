@@ -43,3 +43,13 @@ document.getElementById('admin-form').addEventListener('submit', function(e) {
         console.error('Error:', error);
     });
 });
+
+function togglePasswordCheckbox() {
+  const passwordField = document.getElementById("password");
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+  } else {
+    passwordField.type = "password";
+  }
+}

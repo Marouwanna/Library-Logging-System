@@ -78,7 +78,9 @@ $sql = "SELECT * FROM staff";
                 <input type="text" id="edit_username" name="username" placeholder="Admin2"><br><br>
 
                 <label for="edit_password">Password</label>
-                <input type="password" name="password" id="edit_password"><br><br>
+                <input type="password" name="password" id="edit_password"><br>
+                <input class="check-box" type="checkbox" id="showPass" onclick="togglePasswordCheckbox()"> Show Password
+                <br><br>
                 <div>
                     <button type="button" class="cancel-btn" onclick="closeEditModal()">Cancel</button>
                     <button type="submit" class="addd-btn">Update Admin</button>
@@ -114,9 +116,9 @@ $sql = "SELECT * FROM staff";
         </div>
     </div>
 
-    <script src="../JS/adminstaff.js"></script>
+    <script src="../JS/admin-staff.js"></script>
 
-        <script>
+    <script>
     function loadAdmins() {
         fetch("admin-data.php")
         .then(response => response.text())
@@ -127,6 +129,8 @@ $sql = "SELECT * FROM staff";
 
     setInterval(loadAdmins, 2000);
     </script>
+
+    
 
 </body>
 </html>

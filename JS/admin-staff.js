@@ -47,3 +47,13 @@ function openEditModal(admin_id, username) {
 function closeEditModal(){
     document.getElementById('editAdminModal').style.display = 'none';
 }
+
+function togglePasswordCheckbox() {
+  const passwordField = document.getElementById("edit_password");
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+  } else {
+    passwordField.type = "password";
+  }
+}
